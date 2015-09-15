@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PlayerChampionship" Member="PlayerChampionships">
+    <Type Name="PlayerChampionship">
+      <Column Name="IdPlayer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdChamp" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Player_PlayerChampionship" Member="Player" ThisKey="IdPlayer" OtherKey="Player_Id" Type="Player" IsForeignKey="true" />
+      <Association Name="Championship_PlayerChampionship" Member="Championship" ThisKey="IdChamp" OtherKey="Id" Type="Championship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Games" Member="Games">
+    <Type Name="Game">
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerIdX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlayerIdCircle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GameMode" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="winner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_gameMove" Member="gameMoves" ThisKey="GameId" OtherKey="gameId" Type="gameMove" />
+      <Association Name="Player_Game" Member="Player" ThisKey="PlayerIdCircle" OtherKey="Player_Id" Type="Player" IsForeignKey="true" />
+      <Association Name="Player_Game1" Member="Player1" ThisKey="PlayerIdX" OtherKey="Player_Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.gameMoves" Member="gameMoves">
+    <Type Name="gameMove">
+      <Column Name="gameId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="moveNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="shape" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="place" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_gameMove" Member="Game" ThisKey="gameId" OtherKey="GameId" Type="Game" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Players" Member="Players">
+    <Type Name="Player">
+      <Column Name="Player_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Advisor_To" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Availbale" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Advisor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Is_Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Player_PlayerChampionship" Member="PlayerChampionships" ThisKey="Player_Id" OtherKey="IdPlayer" Type="PlayerChampionship" />
+      <Association Name="Player_Game" Member="Games" ThisKey="Player_Id" OtherKey="PlayerIdCircle" Type="Game" />
+      <Association Name="Player_Game1" Member="Games1" ThisKey="Player_Id" OtherKey="PlayerIdX" Type="Game" />
+      <Association Name="Player_Player" Member="Players" ThisKey="Player_Id" OtherKey="Advisor_To" Type="Player" />
+      <Association Name="Player_Championship" Member="Championships" ThisKey="Player_Id" OtherKey="CreatedBy" Type="Championship" />
+      <Association Name="Player_Player" Member="Player1" ThisKey="Advisor_To" OtherKey="Player_Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Championship" Member="Championships">
+    <Type Name="Championship">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Championship_PlayerChampionship" Member="PlayerChampionships" ThisKey="Id" OtherKey="IdChamp" Type="PlayerChampionship" />
+      <Association Name="Player_Championship" Member="Player" ThisKey="CreatedBy" OtherKey="Player_Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

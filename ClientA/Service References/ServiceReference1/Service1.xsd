@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56143/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost:56143/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="getChampList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getChampListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getChampListResult" nillable="true" type="q1:ArrayOfChamppion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tick" type="xs:boolean" />
+        <xs:element minOccurs="0" name="byteArr" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regPlayerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="regPlayerResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regChampionship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="list" nillable="true" type="q2:ArrayOfint" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regChampionshipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="regChampionshipResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getChampionshipByPlayerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getChampionshipByPlayerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getChampionshipByPlayerIdResult" nillable="true" type="q3:ArrayOfChamppion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addNewChampionship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="picture" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addNewChampionshipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addNewChampionshipResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAdvisors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAdvisorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAdvisorsResult" nillable="true" type="q4:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regAdvisors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="list" nillable="true" type="q5:ArrayOfint" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPlayers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAllPlayersResult" nillable="true" type="q6:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPlayerNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regToServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAviableOnlinePlayers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAviableOnlinePlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getAviableOnlinePlayersResult" nillable="true" type="q7:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendMsgToRival">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+        <xs:element minOccurs="0" name="rivalId" type="xs:int" />
+        <xs:element minOccurs="0" name="playerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="acceptAnswerFromRival">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+        <xs:element minOccurs="0" name="ans" type="xs:boolean" />
+        <xs:element minOccurs="0" name="rivalId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="myMove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="myId" type="xs:int" />
+        <xs:element minOccurs="0" name="x" type="xs:int" />
+        <xs:element minOccurs="0" name="rivalId" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="win" type="xs:boolean" />
+        <xs:element minOccurs="0" name="shape" type="xs:int" />
+        <xs:element minOccurs="0" name="moveNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="logOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setPlayerOnline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="forfitGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rivalId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerGames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPlayerGamesResult" nillable="true" type="q8:ArrayOfMyGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMovesGameByGameId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMovesGameByGameIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getMovesGameByGameIdResult" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAllPlayers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAllPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetAllPlayersResult" nillable="true" type="q10:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePlayerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="first" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="last" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+        <xs:element minOccurs="0" name="picture" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAllGames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAllGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetAllGamesResult" nillable="true" type="q11:ArrayOfMyGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetGamesByPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetGamesByPlayerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetGamesByPlayerResult" nillable="true" type="q12:ArrayOfMyGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetChampListByPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetChampListByPlayerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetChampListByPlayerResult" nillable="true" type="q13:ArrayOfChamppion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetPlayerByGames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetPlayerByGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetPlayerByGamesResult" nillable="true" type="q14:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAdvisorsByGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAdvisorsByGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetAdvisorsByGameResult" nillable="true" type="q15:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetPlayersByChamp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="champId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetPlayersByChampResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetPlayersByChampResult" nillable="true" type="q16:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAmountOfGames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAmountOfGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetAmountOfGamesResult" nillable="true" type="q17:ArrayOfPlayers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAmountOfCities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wpfGetAmountOfCitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="wpfGetAmountOfCitiesResult" nillable="true" type="q18:ArrayOfcities" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletChampByValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="index" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletChampByValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deletChampByValueResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateChamp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="list" nillable="true" type="q19:ArrayOfChamppion" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="invitePlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+        <xs:element minOccurs="0" name="rivalId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="answerFromRiavl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="answer" type="xs:boolean" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="moveFromRival">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="win" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setGameId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rivalForfit">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ErrorCallBack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="str" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

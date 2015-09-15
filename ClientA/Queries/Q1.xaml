@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Client.Q1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client"
+             mc:Ignorable="d" Height="300" Width="370">
+
+    <UserControl.Resources>
+        <local:WPFBitmapConverter   x:Key="ImageConverter"/>
+
+    </UserControl.Resources>
+    <Grid Loaded="Grid_Loaded" Margin="0,0,-17,-14" >
+        <DataGrid x:Name="dgv"  HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="300" Width="370" Background="White" SelectionUnit="Cell">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn     Header="Player Id"  Binding="{Binding playerId}"/>
+                <DataGridTemplateColumn Header="Pic">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image MouseDown="TextBlock_MouseDown"  Source="{Binding pictureArrByte,Converter={StaticResource ImageConverter}}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="First Name"  Binding="{Binding firstName}"/>
+                <DataGridTextColumn     Header="Last Name"  Binding="{Binding lastName}"/>
+                <DataGridTextColumn     Header="Advise To"  Binding="{Binding advisorTo}"/>
+
+
+            </DataGrid.Columns>
+
+
+
+        </DataGrid>
+
+    </Grid>
+</UserControl>

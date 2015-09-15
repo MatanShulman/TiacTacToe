@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F27C444-D856-4093-BBBC-0A8A3EDF78DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainMenus\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenus\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\answerQuerieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Queries\answerQuerieForm.Designer.cs">
+      <DependentUpon>answerQuerieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay\Board3x3.xaml.cs">
+      <DependentUpon>Board3x3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndReg\adviserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndReg\adviserForm.Designer.cs">
+      <DependentUpon>adviserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay\Board5x5.xaml.cs">
+      <DependentUpon>Board5x5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndReg\champanshipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndReg\champanshipForm.Designer.cs">
+      <DependentUpon>champanshipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainProgram.Designer.cs">
+      <DependentUpon>MainProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay\gameBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamePlay\gameBoardForm.Designer.cs">
+      <DependentUpon>gameBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay\historyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamePlay\historyForm.Designer.cs">
+      <DependentUpon>historyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenus\InviteGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenus\InviteGameForm.Designer.cs">
+      <DependentUpon>InviteGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndReg\LogInPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndReg\LogInPlayer.Designer.cs">
+      <DependentUpon>LogInPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenus\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenus\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenus\onlinePlayersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenus\onlinePlayersForm.Designer.cs">
+      <DependentUpon>onlinePlayersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\chooseQueriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Queries\chooseQueriesForm.Designer.cs">
+      <DependentUpon>chooseQueriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\Q1.xaml.cs">
+      <DependentUpon>Q1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\Q2.xaml.cs">
+      <DependentUpon>Q2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\Q3.xaml.cs">
+      <DependentUpon>Q3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\Q4.xaml.cs">
+      <DependentUpon>Q4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\Q5.xaml.cs">
+      <DependentUpon>Q5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndReg\regChampionshipcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndReg\regChampionshipcs.Designer.cs">
+      <DependentUpon>regChampionshipcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndReg\Reg_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndReg\Reg_Form.Designer.cs">
+      <DependentUpon>Reg_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay\Board4x4.xaml.cs">
+      <DependentUpon>Board4x4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenus\waitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenus\waitingForm.Designer.cs">
+      <DependentUpon>waitingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\WPFBitmapConverter.cs" />
+    <EmbeddedResource Include="MainMenus\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndReg\adviserForm.resx">
+      <DependentUpon>adviserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Queries\answerQuerieForm.resx">
+      <DependentUpon>answerQuerieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndReg\champanshipForm.resx">
+      <DependentUpon>champanshipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainProgram.resx">
+      <DependentUpon>MainProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePlay\gameBoardForm.resx">
+      <DependentUpon>gameBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePlay\historyForm.resx">
+      <DependentUpon>historyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenus\InviteGameForm.resx">
+      <DependentUpon>InviteGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndReg\LogInPlayer.resx">
+      <DependentUpon>LogInPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenus\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenus\onlinePlayersForm.resx">
+      <DependentUpon>onlinePlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Queries\chooseQueriesForm.resx">
+      <DependentUpon>chooseQueriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndReg\regChampionshipcs.resx">
+      <DependentUpon>regChampionshipcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndReg\Reg_Form.resx">
+      <DependentUpon>Reg_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenus\waitingForm.resx">
+      <DependentUpon>waitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ServiceReference1\Client.ServiceReference1.Champpion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Client.ServiceReference1.cities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Client.ServiceReference1.MyGames.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Client.ServiceReference1.Players.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Service.wsdl" />
+    <None Include="Service References\ServiceReference1\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="GamePlay\Board3x3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GamePlay\Board4x4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GamePlay\Board5x5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Queries\Q1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Queries\Q2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Queries\Q3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Queries\Q4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Queries\Q5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emptyImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Service.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
